@@ -4,32 +4,35 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-item>
-    <ion-label position ="stacked">Nombre</ion-label>
-    <ion-input type="text" placeholder="Ingrese su Nombre"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position ="stacked">Telefono</ion-label>
-    <ion-input type="tel" placeholder="Teléfono"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position ="stacked">Ingreso</ion-label>
-    <ion-input type="number" placeholder="Ingreso"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position ="stacked">Correo</ion-label>
-    <ion-input type="email" placeholder="Ingrese su Correo"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position ="stacked">Procedencia</ion-label>
-    <ion-input type="text" placeholder="Pocedencia"></ion-input>
-  </ion-item> 
-    
-  <ion-item>
-    <ion-button shape="round" color="primary" expand="block" padding>
-      Confirmar
-    </ion-button>
-  </ion-item>
-  
+<ion-content padding-top>
+  <form [formGroup]="clienteForm" (ngSubmit)="submit()">
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input [(ngModel)]="cliente.nombre" formControlName="nombre" type="text" placeholder="Ingrese su Nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Telefono</ion-label>
+      <ion-input [(ngModel)]="cliente.telefono" formControlName="telefono" type="tel" placeholder="Teléfono"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Ingreso</ion-label>
+      <ion-input [(ngModel)]="cliente.ingreso" formControlName="ingreso" type="number" placeholder="Ingreso"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Correo</ion-label>
+      <ion-input [(ngModel)]="cliente.email" formControlName="email" type="email" placeholder="Ingrese su Correo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Procedencia</ion-label>
+      <ion-input [(ngModel)]="cliente.procedencia" type="text" formControlName="Procedencia" placeholder="Pocedencia"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-button shape="round" color="primary" expand="block" padding type="submit">
+        Confirmar
+      </ion-button>
+    </ion-item>
+  </form>
+
+
 </ion-content>

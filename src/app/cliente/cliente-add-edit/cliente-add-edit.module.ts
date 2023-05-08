@@ -8,12 +8,15 @@ import { ClienteAddEditPageRoutingModule } from './cliente-add-edit-routing.modu
 
 import { ClienteAddEditPage } from './cliente-add-edit.page';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ClienteAddEditPageRoutingModule
+    ClienteAddEditPageRoutingModule,
+    ReactiveFormsModule,
   ],
   declarations: [ClienteAddEditPage]
 })
